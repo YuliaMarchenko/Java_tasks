@@ -13,19 +13,24 @@ public class Main {
 
     public static String[] getNewRandomArray() {
         Random random = new Random(System.currentTimeMillis());
-        int size = random.nextInt(30) + 1; //рандомная длина массива, не больше 31 элентов
-        String[] newRandowArray = new String[size];
-        String str = "abcdefghijklmnopqrstuvwxyz1234567890";
+        int size = random.nextInt(10) + 1;
+        String[] newRandomArray = new String[size];
         for (int i = 0; i < size; i++) {
-            int l = random.nextInt(10) + 1; //рандомная длина строки, не больше 11 символов
-            StringBuilder buffer = new StringBuilder(l);
-            for (int j=0; j<l;j++) {
-                int ch = random.nextInt(str.length()); //рандомный символ из строки str
-                buffer.append(str.charAt(ch));
-                newRandowArray[i] = buffer.toString();
-            }
+            int l = random.nextInt(10) + 1;
+            newRandomArray[i] = getRandomString(l);
         }
-        return newRandowArray;
+        return newRandomArray;
+    }
+
+    public static String getRandomString(int length) {
+        Random random = new Random(System.currentTimeMillis());
+        String str = "abcdefghijklmnopqrstuvwxyz1234567890";
+        StringBuilder buffer = new StringBuilder(length);
+        for (int j = 0; j < length; j++) {
+            int ch = random.nextInt(str.length());
+            buffer.append(str.charAt(ch));
+        }
+        return buffer.toString();
     }
 
     public static void printArray(String[] array) {
