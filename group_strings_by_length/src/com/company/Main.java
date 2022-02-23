@@ -56,6 +56,7 @@ public class Main {
 
     public static void printGroups(int[] arrayLengthString) {
         int count = 1;
+        int common = 1;
         int number = arrayLengthString[0];
         for (int i = 1; i < arrayLengthString.length; i++) {
             if (arrayLengthString[i - 1] == arrayLengthString[i]) {
@@ -64,9 +65,11 @@ public class Main {
                 System.out.println(count + " strings are " + number + " characters long");
                 number = arrayLengthString[i];
                 count = 1;
+                common++;
             }
         }
         System.out.println(count + " strings are " + number + " characters long");
+        System.out.println("So in this array there are " + common + " different groups.");
     }
 
     public static void printArrayStr(String[] arr) {
