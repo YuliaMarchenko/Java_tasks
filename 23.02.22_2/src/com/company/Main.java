@@ -12,10 +12,17 @@ public class Main {
 	**Implement the previous task, but think in your system there is not enough memory for the resulting
 	array[arr1.lenght+arr2.length] for merge like mergeSort does.*/
         int[] array1 = {13, 78, 12, 18, 12, 36};
-        int[] array2 = {14, 18, 11, 70};
+        int[] array2 = {14, 18, 11, 70, 2, 90, 1};
         mutuallySort(array1, array2);
         System.out.println(Arrays.toString(array1));
         System.out.println(Arrays.toString(array2));
+
+
+        int[] array3 = {13, 78, 12, 18, 12, 36};
+        int[] array4 = {14, 18, 11, 70, 2, 90, 1};
+        mutuallySortNoMemory(array3, array4);
+        System.out.println(Arrays.toString(array3));
+        System.out.println(Arrays.toString(array4));
     }
 
 
@@ -45,5 +52,36 @@ public class Main {
                     array[i] = tmp;
                 }
             }
+    }
+
+    public static void mutuallySortNoMemory(int[] array1, int[] array2) {
+        for (int i = 0; i < array1.length; i++) {
+            int[] min1 = minElAndindex(array1, i);
+            int[] min2 = minElAndindex(array2, 0);
+            if (min1[0] < min2[0]) {
+                int index = min1[1];
+                int tmp = array1[index];
+                array1[index] = array1[i];
+                array1[i] = tmp;
+            } else {
+                int index = min2[1];
+                int temp = array1[i];
+                array1[i] = array2[index];
+                array2[index] = temp;
+            }
+        }
+        sort(array2);
+    }
+
+    public static int[] minElAndindex(int[] array, int index) {
+        int min = array[index];
+        int minIndex = index;
+        for (int i = index; i < array.length; i++) {
+            if (min > array[i]) {
+                min = array[i];
+                minIndex = i;
+            }
+        }
+        return new int[]{min, minIndex};
     }
 }
