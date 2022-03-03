@@ -84,10 +84,10 @@ public class Main {
             if (arrNumbers[i] == numberVasia) {
                 countVasia++;
             }
-            if (countPeter == countVasia) {
-                maxLength = i;
+            if (countPeter != 0 && countVasia != 0 && countPeter == countVasia) {
+                maxLength = i + 1;
             }
         }
-        return maxLength + 1;
+        return maxLength;
     }
 }
