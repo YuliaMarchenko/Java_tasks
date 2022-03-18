@@ -25,9 +25,9 @@ public class Main {
         Address addressDaria = new Address("Pushkinskai", 3);
         Person daria = new Person("Daria", addressDaria);
         Address addressVasia = new Address("Leningradskai", 5);
-        Person vasia = new Person("Vasia ", addressVasia);
+        Person vasia = new Person("Vasia", addressVasia);
         Address addressSophia = new Address("Sovetskaia", 15);
-        Person sophia = new Person("Sophia ", addressSophia);
+        Person sophia = new Person("Sophia", addressSophia);
 
         Person[] persons = {daria, vasia, sophia};
         AddressGetter addressGetter = new AddressGetter(persons);

@@ -10,7 +10,7 @@ public class Person {
     }
 
     public String toString (){
-        return String.format("%s %s", name, address);
+        return String.format("Name: %s, address: %s", name, address);
     }
 
     public String getName() {
