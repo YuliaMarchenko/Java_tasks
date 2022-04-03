@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Manager extends Employee{
-    private List<Employee> team;
+    private EmployeeTeam team;
 
     public Manager(String name, String surname) {
         super(name, surname);
-        team = new ArrayList<>();
+        team = new EmployeeTeam();
     }
 
     @Override
@@ -17,6 +17,10 @@ public class Manager extends Employee{
     }
 
     public void addEmployeeToTeam(Employee newEmployee){
-        team.add(newEmployee);
+        team.addEmployeeToTeam(newEmployee);
+    }
+
+    public void removeEmployeeFromTeam(int index){
+        team.removeEmployeeFromTeam(1);
     }
 }

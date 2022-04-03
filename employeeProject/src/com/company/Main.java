@@ -26,6 +26,33 @@ public class Main {
         Manager andrey = new Manager("Andrey", "Pushka");
         andrey.addEmployeeToTeam(vasia);
         andrey.addEmployeeToTeam(daria);
+        andrey.addEmployeeToTeam(petia);
         System.out.println(andrey.toString() + andrey.doWork());
+
+    /* Implement the removeEmployeeFromTeam(int index) in Manager in our Employee project.
+    Think about how you could solve this problem in assumption that element order in teamArray does not matter.*/
+
+        andrey.removeEmployeeFromTeam(1);
+        System.out.println(andrey.toString() + andrey.doWork());
+
+    /* Let’s create new class EmployeeTeam that should handle the array of Employees.
+    This class should have private field array of Employees and implements toString(),
+    add(Employee employee) method and remove(int index) method.*/
+
+        EmployeeTeam employeeTeam = new EmployeeTeam();
+        employeeTeam.addEmployeeToTeam(daria);
+        employeeTeam.addEmployeeToTeam(vasia);
+        employeeTeam.addEmployeeToTeam(petia);
+        System.out.println(employeeTeam.toString());
+
+        employeeTeam.removeEmployeeFromTeam(1);
+        System.out.println(employeeTeam.toString());
+
+        employeeTeam.removeEmployeeFromTeam2(petia);
+        System.out.println(employeeTeam.toString());
+
+    /* Think how could you refactor the Employee project and use the new EmployeeTeam class.*/
+
+        //done
     }
 }
