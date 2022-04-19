@@ -1,2 +1,7 @@
-package com.company;public class Author {
+package com.company;
+
+public class Author {
+    String firstName;
+    String lastName;
+    int yearOfBirth;
 }

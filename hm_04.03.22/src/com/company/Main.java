@@ -8,7 +8,7 @@ public class Main {
 	/* Write a method that displays second max element of an int array.
 	The array contains no less than two 2 elements.*/
 
-        int[] arr = {1, 2, 9, 13, 15};
+        int[] arr = {2, 3, 3, 3, 2};
         find2Largest(arr);
         find2Largest2(arr);
 

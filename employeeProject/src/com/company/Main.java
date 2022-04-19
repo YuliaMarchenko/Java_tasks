@@ -12,8 +12,9 @@ public class Main {
         BackEnd vasia = new BackEnd("Vasia", "Ivanov");
         FrontEnd petia = new FrontEnd("Petia", "Sidorov");
         FullStack daria = new FullStack("Daria", "Murzikova");
+        BackEnd vasia2 = new BackEnd("Vasia", "Ptushkin");
 
-        Employee [] employees = {vasia, petia, daria};
+        Employee [] employees = {vasia, petia, daria, vasia2};
 
         for (int i = 0; i < employees.length; i++){
             System.out.println(employees[i].toString() + employees[i].doWork());
@@ -27,6 +28,7 @@ public class Main {
         andrey.addEmployeeToTeam(vasia);
         andrey.addEmployeeToTeam(daria);
         andrey.addEmployeeToTeam(petia);
+        andrey.addEmployeeToTeam(vasia2);
         System.out.println(andrey.toString() + andrey.doWork());
 
     /* Implement the removeEmployeeFromTeam(int index) in Manager in our Employee project.
@@ -43,16 +45,28 @@ public class Main {
         employeeTeam.addEmployeeToTeam(daria);
         employeeTeam.addEmployeeToTeam(vasia);
         employeeTeam.addEmployeeToTeam(petia);
+        employeeTeam.addEmployeeToTeam(vasia2);
         System.out.println(employeeTeam.toString());
+        System.out.println("Employees in the team: " + employeeTeam.size());
+        System.out.println("The Employee with the given index: " + employeeTeam.get(2));
+        System.out.println("The new EmployeeTeam with the given name: " + employeeTeam.newEmployeeTeam("vasia"));
 
         employeeTeam.removeEmployeeFromTeam(1);
         System.out.println(employeeTeam.toString());
+        System.out.println("Employees in the team: " + employeeTeam.size());
 
         employeeTeam.removeEmployeeFromTeam2(petia);
         System.out.println(employeeTeam.toString());
+        System.out.println("Employees in the team: " + employeeTeam.size());
+
+        Employee [] employeesForAdd = {vasia,petia};
+        employeeTeam.addAllEmployees(employeesForAdd);
+        System.out.println(employeeTeam.toString());
+        System.out.println("The EmployeeTeam with all backend programmers: " + employeeTeam.backEndProgrammers());
+
+        employeeTeam.removeAllEmployees(employeesForAdd);
+        System.out.println(employeeTeam.toString());
 
     /* Think how could you refactor the Employee project and use the new EmployeeTeam class.*/
-
-        //done
     }
 }

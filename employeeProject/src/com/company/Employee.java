@@ -22,7 +22,7 @@ public class Employee {
         return surname;
     }
 
-    public String doWork(){
+    public String doWork() {
         return "not defined";
     }
 }

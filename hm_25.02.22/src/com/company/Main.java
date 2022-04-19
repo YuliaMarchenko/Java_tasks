@@ -32,6 +32,7 @@ public class Main {
         int numberPeter = 7;
         int numberVasia = 42;
         System.out.println("Max length sub array with numbers of Peter and Vasia is " + maxLengthSubArrayWithNumbers(arrNumbers, numberPeter, numberVasia));
+
     }
 
     public static int[][] getNewRandomTwoDimArray(int rows, int columns, int min, int max) {

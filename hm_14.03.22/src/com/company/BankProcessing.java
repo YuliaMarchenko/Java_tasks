@@ -16,12 +16,12 @@ public class BankProcessing {
     public Person[] banksClients() {
         Person[] banksClient = new Person[bankAccounts.length];
         for (int i = 0; i < bankAccounts.length; i++) {
-             banksClient[i] = bankAccounts[i].getClient();
+            banksClient[i] = bankAccounts[i].getClient();
         }
         return banksClient;
     }
 
-    public String secureToString(){
+    public String secureToString() {
         String newBanksAccounts = "";
         for (int i = 0; i < bankAccounts.length; i++) {
             newBanksAccounts += bankAccounts[i].secureToString();
@@ -29,7 +29,7 @@ public class BankProcessing {
         return newBanksAccounts;
     }
 
-    public double sumOfAllBalance(){
+    public double sumOfAllBalance() {
         double sum = 0.00;
         for (int i = 0; i < bankAccounts.length; i++) {
             sum += bankAccounts[i].getBalance();
