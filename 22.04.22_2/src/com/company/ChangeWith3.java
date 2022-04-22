@@ -6,13 +6,10 @@ public class ChangeWith3 extends ChangeString {
     }
 
     @Override
-    public String getNewStr() {
-        String[] result = str.split(" ");
-        for (int i = 0; i < result.length; i++){
-            if (result[i].length()==3) {
-                result[i] = result[i].toUpperCase();
-            }
+    public String transform(String word) {
+        if (word.length() == 3) {
+            return word.toUpperCase();
         }
-        return String.join(" ", result);
+        return word;
     }
 }

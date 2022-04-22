@@ -6,13 +6,10 @@ public class ChangeWith5 extends ChangeString {
     }
 
     @Override
-    public String getNewStr() {
-        String[] result = str.split(" ");
-        for (int i = 0; i < result.length; i++) {
-            if (result[i].length() == 5) {
-                result[i] = "*****";
-            }
+    public String transform(String word) {
+        if (word.length() == 5) {
+            return "*****";
         }
-        return String.join(" ", result);
+        return word;
     }
 }

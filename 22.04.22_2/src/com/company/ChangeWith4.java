@@ -8,13 +8,10 @@ public class ChangeWith4 extends ChangeString {
     }
 
     @Override
-    public String getNewStr() {
-        String[] result = str.split(" ");
-        for (int i = 0; i < result.length; i++){
-            if (result[i].length()==4) {
-                result[i] = result[i].toLowerCase();
-            }
+    public String transform(String word) {
+        if (word.length() == 3) {
+            return word.toLowerCase();
         }
-        return String.join(" ", result);
+        return word;
     }
 }
