@@ -49,21 +49,21 @@ public class EmployeeTeam {
         return employees.get(index);
     }
 
-    public void addAllEmployees(Employee [] allEmployeesForAdd){
-        for(Employee employee: allEmployeesForAdd) {
+    public void addAllEmployees(Employee[] allEmployeesForAdd) {
+        for (Employee employee : allEmployeesForAdd) {
             employees.add(employee);
         }
     }
 
-    public void removeAllEmployees(Employee [] allEmployeesForRemove){
-        for(Employee employee: allEmployeesForRemove) {
+    public void removeAllEmployees(Employee[] allEmployeesForRemove) {
+        for (Employee employee : allEmployeesForRemove) {
             employees.remove(employee);
         }
     }
 
-    public EmployeeTeam newEmployeeTeam(String name){
+    public EmployeeTeam newEmployeeTeam(String name) {
         EmployeeTeam newEmployeeTeam = new EmployeeTeam();
-        for (Employee employee: employees) {
+        for (Employee employee : employees) {
             if (employee.getName().toLowerCase().equals(name.toLowerCase())) {
                 newEmployeeTeam.addEmployeeToTeam(employee);
             }
@@ -71,10 +71,10 @@ public class EmployeeTeam {
         return newEmployeeTeam;
     }
 
-    public EmployeeTeam backEndProgrammers(){
+    public EmployeeTeam backEndProgrammers() {
         EmployeeTeam backEndEmployeeTeam = new EmployeeTeam();
-        for (Employee employee: employees) {
-            if (employee instanceof BackEnd){
+        for (Employee employee : employees) {
+            if (employee instanceof BackEnd) {
                 backEndEmployeeTeam.addEmployeeToTeam(employee);
             }
         }
