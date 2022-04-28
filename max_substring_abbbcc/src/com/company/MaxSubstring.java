@@ -3,13 +3,14 @@ package com.company;
 public class MaxSubstring {
 
     static int maxSubstring(String str) {
+        if (str.length() == 1) return 1;
         int max = 0;
         int count = 1;
-        for (int i = 1; i < str.length(); i++) {
-            if (str.charAt(i - 1) == str.charAt(i)) {
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.charAt(i) == str.charAt(i + 1)) {
                 count++;
-            } else {
                 max = Math.max(max, count);
+            } else {
                 count = 1;
             }
         }

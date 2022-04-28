@@ -13,5 +13,15 @@ public class TestMaxSubstring {
     public void testMaxSubstringEmptyString(){
         Assertions.assertEquals(0, MaxSubstring.maxSubstring(""));
     }
-    
+
+    @Test
+    public void testMaxSubstringStringWithOneSymbol(){
+        Assertions.assertEquals(1, MaxSubstring.maxSubstring("a"));
+    }
+
+    @Test
+    public void testMaxSubstringStringWithOneCharManyCount(){
+        Assertions.assertEquals(6, MaxSubstring.maxSubstring("aaaaaa"));
+    }
+
 }
