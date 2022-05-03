@@ -1,8 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 /* Implement the following features in the Employee project in EmployeeTeam:
 1 - done. The int size() method that returns how many Employees in the team.
@@ -17,11 +15,20 @@ Implement the trimToSize() method that trims the capacity of the array to be the
 7 - done. The method that returns the new EmployeeTeam with all employees with the given name from this team.
 8 - done. Implement the method that returns the EmployeeTeam with all programmers or all QA Engineers from this team.*/
 
+// Add to the EmployeeTeam the ability to sort employees by name. Use the Comparable and Arrays.sort
+
 public class EmployeeTeam {
     private List<Employee> employees;
+    private List<EmployeeTaskAssignment> employeeTaskAssignments;
+
 
     public EmployeeTeam() {
         employees = new ArrayList<>();
+        employeeTaskAssignments = new LinkedList<>();
+    }
+
+    public void sortEmployees(){
+        Collections.sort(employees);
     }
 
     @Override
@@ -80,4 +87,20 @@ public class EmployeeTeam {
         }
         return backEndEmployeeTeam;
     }
+
+    public void addTaskToEmployee(Employee employee, Task task){
+        EmployeeTaskAssignment employeeTaskAssignment = new EmployeeTaskAssignment(employee,task);
+        employeeTaskAssignments.add(employeeTaskAssignment); // Сложность: O(1)
+    }
+
+    public List<Task> showEmployeeTasks(Employee employee){
+        List<Task> tasks = new ArrayList<>();
+        for (EmployeeTaskAssignment employeeTask: employeeTaskAssignments){
+            if (employee.compareTo(employeeTask.getEmployee()) == 0) {
+                tasks.add(employeeTask.getTask());
+            }
+        }
+        return tasks;
+    }
+
 }

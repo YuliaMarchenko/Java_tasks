@@ -1,12 +1,17 @@
 package com.company;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private String name;
     private String surname;
 
     public Employee(String name, String surname) {
         this.name = name;
         this.surname = surname;
+    }
+
+    @Override
+    public int compareTo(Employee employee) {
+        return this.surname.compareTo(employee.getSurname());
     }
 
     @Override
@@ -25,4 +30,5 @@ public class Employee {
     public String doWork() {
         return "not defined";
     }
+
 }
