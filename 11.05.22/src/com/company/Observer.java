@@ -1,2 +1,5 @@
-package com.company;public interface Observer {
+package com.company;
+
+public interface Observer {
+    void handleEvent();
 }

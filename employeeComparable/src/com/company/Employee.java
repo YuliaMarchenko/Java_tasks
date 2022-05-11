@@ -15,13 +15,7 @@ public class Employee implements Comparable<Employee>{
 
     @Override
     public int compareTo(Employee employee){
-        if (this.getId() == employee.getId()){
-            return 0;
-        }
-        if (this.getId() > employee.getId()){
-            return 1;
-        }
-        return -1;
+        return this.getId() - employee.getId();
     }
 
     public int getId() {
