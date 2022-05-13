@@ -1,4 +1,10 @@
 package com.company;
 
-public class ReverseIntegerList {
-}
+import java.util.Collections;
+import java.util.List;
+
+/*public class ReverseIntegerList {
+    public static void getReverseIntegerList(List<Integer> numbers) {
+        return Collections.reverse(numbers);
+    }
+}*/
