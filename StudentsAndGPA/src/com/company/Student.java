@@ -1,11 +1,11 @@
 package com.company;
 
-public class Students {
+public class Student {
     private String name;
     private int yearOfBirthday;
     private double gpa;
 
-    public Students(String name, int yearOfBirthday, double gpa) {
+    public Student(String name, int yearOfBirthday, double gpa) {
         this.name = name;
         this.yearOfBirthday = yearOfBirthday;
         this.gpa = gpa;
