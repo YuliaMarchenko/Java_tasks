@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class StudentsSort {
-    private Students[] students;
+    private Student[] students;
 
-    public StudentsSort(Students[] students){
+    public StudentsSort(Student[] students){
         this.students = students;
     }
 
-    public void sortStudents(Comparator<Students> comparator){
+    public void sortStudents(Comparator<Student> comparator){
         Arrays.sort(this.students, comparator);
     }
 }

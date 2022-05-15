@@ -1,5 +1,5 @@
 package com.company;
 
-public interface Observer {
-    void handleEvent();
+public interface TaskAddedObserver {
+    void onTaskAdded(Task task);
 }

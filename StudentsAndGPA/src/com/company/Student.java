@@ -1,6 +1,6 @@
 package com.company;
 
-public class Student {
+public class Student implements TaskAddedObserver{
     private String name;
     private int yearOfBirthday;
     private double gpa;
@@ -22,4 +22,10 @@ public class Student {
     public double getGpa() {
         return gpa;
     }
+
+    @Override
+    public void onTaskAdded(Task task) {
+        System.out.println("Student " + getName() + " sees a task " + task.getId());
+    }
+
 }

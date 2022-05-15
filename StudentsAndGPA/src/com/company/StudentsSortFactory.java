@@ -3,7 +3,7 @@ package com.company;
 import java.util.Comparator;
 
 public class StudentsSortFactory {
-    public Comparator<Students> buildComparator(int enteredValueSort) {
+    public Comparator<Student> buildComparator(int enteredValueSort) {
         switch (enteredValueSort) {
             case 1:
                 return new NameComparator();

@@ -1,7 +1,7 @@
 package com.company;
 
-public interface Observable {
-    void add (Observer observer);
-    void remove(Observer observer);
-    void notifyObservers();
+public interface TaskAddedObservable {
+    void addObserver(TaskAddedObserver taskAddedObserver);
+    void removeObserver(TaskAddedObserver taskAddedObserver);
+    void notifyObservers(Task task);
 }

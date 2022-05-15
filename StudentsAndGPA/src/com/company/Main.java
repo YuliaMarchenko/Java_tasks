@@ -10,22 +10,31 @@ public class Main {
         // Create the array of several students. Your program should ask user how to sort students (by name, by age, or by gpa)
         // and display students accordingly
 
-        Students student1 = new Students("Dasha", 1985, 3.86);
-        Students student2 = new Students("Vasia", 1997, 4.88);
-        Students student3 = new Students("Alena", 1978, 5.00);
-        Students[] students = {student1, student2, student3};
+        Student student1 = new Student("Dasha", 1985, 3.86);
+        Student student2 = new Student("Vasia", 1997, 4.88);
+        Student student3 = new Student("Alena", 1978, 5.00);
+        Student[] students = {student1, student2, student3};
 
         System.out.println("How to sort students?");
         System.out.println("1 - by name, 2 - by age, 3 - by gpa");
         Scanner sc = new Scanner(System.in);
         int enteredValueSort = sc.nextInt();
         StudentsSort studentsSort = new StudentsSort(students);
-        Comparator<Students> comp = new StudentsSortFactory().buildComparator(enteredValueSort);
+        Comparator<Student> comp = new StudentsSortFactory().buildComparator(enteredValueSort);
         studentsSort.sortStudents(comp);
         sc.close();
 
-        for (Students student:students) {
+        for (Student student:students) {
             System.out.println(student.getName() + " " + student.getYearOfBirthday() + " " + student.getGpa());
         }
+
+        Teacher mathTeacher = new Teacher();
+        mathTeacher.addObserver(student1);
+        mathTeacher.addObserver(student2);
+        mathTeacher.addObserver(student3);
+
+        mathTeacher.addTask(new Task(1, "write code"));
+        mathTeacher.addTask(new Task(2, "review code"));
+
     }
 }
