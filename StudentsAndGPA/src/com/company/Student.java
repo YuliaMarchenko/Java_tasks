@@ -1,6 +1,6 @@
 package com.company;
 
-public class Student implements TaskAddedObserver{
+public class Student implements TaskObserver {
     private String name;
     private int yearOfBirthday;
     private double gpa;
@@ -9,6 +9,7 @@ public class Student implements TaskAddedObserver{
         this.name = name;
         this.yearOfBirthday = yearOfBirthday;
         this.gpa = gpa;
+        TaskListSingleton.getInstance().addObserver(this);
     }
 
     public String getName() {
@@ -24,8 +25,15 @@ public class Student implements TaskAddedObserver{
     }
 
     @Override
-    public void onTaskAdded(Task task) {
-        System.out.println("Student " + getName() + " sees a task " + task.getId());
+    public void handleEvent(TaskEvent event) {
+        if (event.getType() != TaskEventType.ADDED) {
+            return;
+        }
+        System.out.println("Student " + getName() + " sees a task " + event.getTask().getId());
+    }
+
+    public void doTask(Task task){
+        TaskListSingleton.getInstance().doTask(task, this);
     }
 
 }

@@ -15,6 +15,7 @@ public class Main {
         Student student3 = new Student("Alena", 1978, 5.00);
         Student[] students = {student1, student2, student3};
 
+        /*
         System.out.println("How to sort students?");
         System.out.println("1 - by name, 2 - by age, 3 - by gpa");
         Scanner sc = new Scanner(System.in);
@@ -27,14 +28,16 @@ public class Main {
         for (Student student:students) {
             System.out.println(student.getName() + " " + student.getYearOfBirthday() + " " + student.getGpa());
         }
+        */
 
-        Teacher mathTeacher = new Teacher();
-        mathTeacher.addObserver(student1);
-        mathTeacher.addObserver(student2);
-        mathTeacher.addObserver(student3);
+        Teacher mathTeacher = new Teacher("Petr Petrovich", "math");
 
-        mathTeacher.addTask(new Task(1, "write code"));
-        mathTeacher.addTask(new Task(2, "review code"));
+        Task task1 = new Task(1, "write code");
+        Task task2 = new Task(2, "review code");
+        mathTeacher.addTask(task1);
+        mathTeacher.addTask(task2);
+
+        student1.doTask(task1);
 
     }
 }
