@@ -23,6 +23,7 @@ public class ReverseIntegerListTest {
         numbersExpected.add(2);
         numbersExpected.add(1);
 
-     //   Assertions.assertArrayEquals(numbersExpected.toArray(), ReverseIntegerList.getReverseIntegerList(numbers).toArray());
+        ReverseIntegerList.getReverseIntegerList(numbers);
+        Assertions.assertArrayEquals(numbersExpected.toArray(), numbers.toArray());
     }
 }

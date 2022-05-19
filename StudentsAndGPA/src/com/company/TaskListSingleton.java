@@ -30,13 +30,13 @@ public final class TaskListSingleton implements TaskObservable {
     }
 
     @Override
-    public void addObserver(TaskObserver taskAddedObserver) {
-        observers.add(taskAddedObserver);
+    public void addObserver(TaskObserver taskObserver) {
+        observers.add(taskObserver);
     }
 
     @Override
-    public void removeObserver(TaskObserver taskAddedObserver) {
-        observers.remove(taskAddedObserver);
+    public void removeObserver(TaskObserver taskObserver) {
+        observers.remove(taskObserver);
     }
 
 
