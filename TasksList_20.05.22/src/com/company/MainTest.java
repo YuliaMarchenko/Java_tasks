@@ -16,15 +16,15 @@ public class MainTest {
 
     @Test
     public void testMinPlatforms(){
-        List<Integer> arrivals = Arrays.asList(900, 940, 950, 1100, 1500, 1800);
-        List<Integer> departures = Arrays.asList(910, 1200, 1120, 1130, 1900, 2000);
-        Assertions.assertEquals(3, Main.minPlatforms(arrivals, departures));
+        List<Integer> arrivals = Arrays.asList(910, 940, 950, 1200, 1500, 1900);
+        List<Integer> departures = Arrays.asList(920, 1200, 1220, 1130, 1800, 2020);
+        Assertions.assertEquals(2, Main.minPlatforms(arrivals, departures));
     }
 
     @Test
     public void testMinPlatforms2(){
-        List<Integer> arrivals = Arrays.asList(900, 940, 950, 1100, 1500, 1800);
-        List<Integer> departures = Arrays.asList(910, 1200, 1120, 1130, 1900, 2000);
-        Assertions.assertEquals(3, Main.minPlatforms2(arrivals, departures));
+        List<Integer> arrivals = Arrays.asList(910, 940, 950, 1200, 1500, 1900);
+        List<Integer> departures = Arrays.asList(920, 1200, 1220, 1130, 1800, 2020);
+        Assertions.assertEquals(2, Main.minPlatforms2(arrivals, departures));
     }
 }
