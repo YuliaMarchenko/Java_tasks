@@ -60,6 +60,10 @@ public class Main {
         int i = 0;
         int j = 0;
 
+        if (trains == 0) {
+            return 0;
+        }
+
         while (i < trains && j < trains) {
             if (arrivals.get(i) <= departures.get(j)) {
                 platform++;
