@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -55,14 +56,11 @@ public class Main {
     }
 
     public static int minPlatforms2(List<Integer> arrivals, List<Integer> departures) {
+        Collections.sort(departures);
         int trains = arrivals.size();
-        int platform = 1;
+        int platform = 0;
         int i = 0;
         int j = 0;
-
-        if (trains == 0) {
-            return 0;
-        }
 
         while (i < trains && j < trains) {
             if (arrivals.get(i) <= departures.get(j)) {
