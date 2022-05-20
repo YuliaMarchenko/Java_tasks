@@ -20,4 +20,11 @@ public class MainTest {
         List<Integer> departures = Arrays.asList(910, 1200, 1120, 1130, 1900, 2000);
         Assertions.assertEquals(3, Main.minPlatforms(arrivals, departures));
     }
+
+    @Test
+    public void testMinPlatforms2(){
+        List<Integer> arrivals = Arrays.asList(900, 940, 950, 1100, 1500, 1800);
+        List<Integer> departures = Arrays.asList(910, 1200, 1120, 1130, 1900, 2000);
+        Assertions.assertEquals(3, Main.minPlatforms2(arrivals, departures));
+    }
 }

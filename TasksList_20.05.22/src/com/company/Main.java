@@ -53,5 +53,23 @@ public class Main {
         }
         return platform;
     }
+
+    public static int minPlatforms2(List<Integer> arrivals, List<Integer> departures) {
+        int trains = arrivals.size();
+        int platform = 1;
+        int i = 0;
+        int j = 0;
+
+        while (i < trains && j < trains) {
+            if (arrivals.get(i) <= departures.get(j)) {
+                platform++;
+                i++;
+            } else if (arrivals.get(i) > departures.get(j)) {
+                platform--;
+                j++;
+            }
+        }
+        return platform;
+    }
 }
 
