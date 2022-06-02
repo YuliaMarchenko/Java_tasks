@@ -33,7 +33,7 @@ public class Main {
 
         for (int i = 0; i < str.length(); i++) {
             int IndexAscii = (int) str.charAt(i);
-            
+
             if (isSeen[IndexAscii] == true) {
                 return false;
             }
