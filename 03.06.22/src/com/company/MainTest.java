@@ -42,4 +42,10 @@ public class MainTest {
         List<Integer> numbers = Arrays.asList(4,3,2,2,3,4);
         Assertions.assertEquals(-1, Main.findSingleNumber(numbers));
     }
+
+    @Test
+    public void testFindSingleNumberOneElmInList(){
+        List<Integer> numbers = Arrays.asList(3,3,3);
+        Assertions.assertEquals(3, Main.findSingleNumber(numbers));
+    }
 }

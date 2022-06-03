@@ -46,7 +46,7 @@ public class Main {
         }
 
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (entry.getValue() == 1) {
+            if (entry.getValue() % 2 == 1) {
                 return entry.getKey();
             }
         }
