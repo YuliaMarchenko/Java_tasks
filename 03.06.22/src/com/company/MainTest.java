@@ -24,4 +24,22 @@ public class MainTest {
         List<Integer> numbers = Arrays.asList(1,2,5,3,-9);
         Assertions.assertEquals(Integer.MIN_VALUE, Main.findMaxOccuredElm(numbers));
     }
+
+    @Test
+    public void testFindSingleNumber(){
+        List<Integer> numbers = Arrays.asList(4,3,2,3,4);
+        Assertions.assertEquals(2, Main.findSingleNumber(numbers));
+    }
+
+    @Test
+    public void testFindSingleNumberTwoPairOneElement(){
+        List<Integer> numbers = Arrays.asList(3,3,3,3,4);
+        Assertions.assertEquals(4, Main.findSingleNumber(numbers));
+    }
+
+    @Test
+    public void testFindSingleNumberNoElement(){
+        List<Integer> numbers = Arrays.asList(4,3,2,2,3,4);
+        Assertions.assertEquals(-1, Main.findSingleNumber(numbers));
+    }
 }
