@@ -48,4 +48,11 @@ public class MainTest {
         List<Integer> numbers = Arrays.asList(3,3,3);
         Assertions.assertEquals(3, Main.findSingleNumber(numbers));
     }
+
+    @Test
+    public void testAnagramList(){
+        List<String> words = Arrays.asList("ivan","airam","vani","vian","maria","kolya");
+        List<String> expected = Arrays.asList("ivan","vani","vian");
+        Assertions.assertEquals(expected, Main.anagramList("ivan", words));
+    }
 }

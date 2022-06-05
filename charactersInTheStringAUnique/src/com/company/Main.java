@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
 
@@ -40,5 +40,41 @@ public class Main {
             isSeen[IndexAscii] = true;
         }
         return true;
+    }
+
+    public static Map<String, String> ab(Map<String, String> mapAB) {
+        if (mapAB.containsKey("a") && mapAB.containsKey("b")) {
+            mapAB.put("ab", mapAB.get("a").concat(mapAB.get("b")));
+        }
+        return mapAB;
+    }
+
+    public static Map<String, Boolean> mapStringBoolean(String[] strings) {
+        Map<String, Boolean> isMoreThanOne = new HashMap<>();
+        for(String s: strings){
+            if (isMoreThanOne.containsKey(s)){
+                isMoreThanOne.put(s,true);
+            } else {
+                isMoreThanOne.put(s, false);
+            }
+        }
+        return isMoreThanOne;
+    }
+
+    public static int nameByNumberOccurence(List<String> list, String name){
+        Map<String, Integer> nameToNumber = new HashMap<>();
+
+        for(String s: list){
+            if(nameToNumber.containsKey(s))
+                nameToNumber.put(s, nameToNumber.get(s) + 1);
+            else nameToNumber.put(s, 1);
+        }
+
+        return nameToNumber.containsKey(name)?nameToNumber.get(name):0;
+    }
+
+    public static List<String> removeDuplicates(List<String> input){
+        Set<String> set = new HashSet<>(input);
+        return new ArrayList<>(set);
     }
 }
