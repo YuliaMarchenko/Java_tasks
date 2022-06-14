@@ -27,4 +27,10 @@ public class MainTest {
         treeMapWordsExpected.put('r', new TreeSet<>(Arrays.asList("rood")));
         Assertions.assertEquals(treeMapWordsExpected, Main.getWord(words));
     }
+
+    @Test
+    public void testMultiplication(){
+        List<Integer> numbers = Arrays.asList(1,5,7,2,7);
+        Assertions.assertTrue(Main.multiplication(numbers, 7));
+    }
 }
