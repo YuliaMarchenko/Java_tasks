@@ -47,4 +47,12 @@ public class Main {
 
         return result;
     }
+
+    public static <T> List<?> copyList(List<? extends T> list1, List<? super T> list2) {
+
+        list2.addAll(list1);
+
+        return list2;
+
+    }
 }

@@ -32,4 +32,12 @@ public class MainTest {
         List<Integer> expected = Arrays.asList(1, 5, 23, 45, 35);
         Assertions.assertEquals(expected, Main.deduplicate2(list));
     }
+
+    @Test
+    public void testCopyElla() {
+        List<Integer> list = Arrays.asList(1, 5, 23, 1, 45, 35, 23);
+        List<Double> list2 = new ArrayList<>();
+        List<Double> expected = Arrays.asList(1.0, 5.0, 23.0, 1.0, 45.0, 35.0, 23.0);
+        Assertions.assertEquals(expected, Main.copyList(list, list2));
+    }
 }
