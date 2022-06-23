@@ -1,2 +1,5 @@
-package com.company;public interface Producable {
+package com.company;
+
+public interface Producable {
+    void result ();
 }

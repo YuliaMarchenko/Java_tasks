@@ -1,2 +1,6 @@
-package com.company;public interface Printable {
+package com.company;
+
+@FunctionalInterface
+public interface Printable {
+    void print(String str);
 }

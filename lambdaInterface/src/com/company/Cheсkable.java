@@ -1,2 +1,6 @@
-package com.company;public interface Cheсkable {
+package com.company;
+
+@FunctionalInterface
+public interface Cheсkable {
+    boolean check(String str);
 }
