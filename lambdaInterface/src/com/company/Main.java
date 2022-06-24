@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.function.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -17,33 +19,41 @@ public class Main {
         System.out.println("Task 1 ------------------------");
         StringConcate stringConcate = (a, b) -> a + b;
         System.out.println(stringConcate.concate("a", "b"));
+        BiFunction<String,String ,String> biFunctionStringConcate = (a, b) -> a + b;
 
         System.out.println("Task 2 ------------------------");
         Cheсkable check3 = (str) -> str.length()==3;
         System.out.println(check3.check("dog"));
         System.out.println(check3.check("bird"));
+        Predicate<String> predicateCheck3 = (str) -> str.length()==3;
 
         System.out.println("Task 3 ------------------------");
         Cheсkable check4 = (str) -> str.length()==4;
         System.out.println(check4.check("dog"));
         System.out.println(check4.check("bird"));
+        Predicate<String> predicateCheck4 = (str) -> str.length()==4;
 
         System.out.println("Task 4 ------------------------");
         Transformable transformableUpper = (str) -> str.toUpperCase();
         System.out.println(transformableUpper.transformable("dog"));
+        Function<String,String> functionUpper = (str) -> str.toUpperCase();
 
         System.out.println("Task 5 ------------------------");
         Transformable transformableStars = (str) ->
                 str.length()==4?"****":str;
         System.out.println(transformableStars.transformable("dog"));
         System.out.println(transformableStars.transformable("bird"));
+        Function<String,String> functionStars = (str) ->
+                str.length()==4?"****":str;
 
         System.out.println("Task 6 ------------------------");
         Printable printable = (str) -> System.out.println("!" + str + "!");
         printable.print("string");
+        Consumer<String> consumerStr = (str) -> System.out.println("!" + str + "!");
 
         System.out.println("Task 7 ------------------------");
         Producable producable = () -> System.out.println("Hello world");
         producable.result();
+        Supplier supplierHelloWorld = () -> "Hello world";
     }
 }
