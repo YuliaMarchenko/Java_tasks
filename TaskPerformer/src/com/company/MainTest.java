@@ -101,4 +101,20 @@ public class MainTest {
 
         Assertions.assertEquals(result, Main.getTaskNotDoneFalse(mapPersonTasks));
     }
+
+    @Test
+    public void testGetTechnologyProgrammers() {
+        Programmer ivan = new Programmer("Ivan", Arrays.asList("Java", "C++", "Ruby"));
+        Programmer daria = new Programmer("Daria", Arrays.asList("Java", "Ruby", "Elixir"));
+        Programmer sofia = new Programmer("Sofia", Arrays.asList("Java", "C++", "Elixir"));
+        List<Programmer> programmers = Arrays.asList(ivan, daria, sofia);
+
+        Map<String, List<Programmer>> result = new HashMap<>();
+        result.put("Java", Arrays.asList(ivan, daria, sofia));
+        result.put("C++", Arrays.asList(ivan, sofia));
+        result.put("Ruby", Arrays.asList(daria, ivan));
+        result.put("Elixir", Arrays.asList(daria, sofia));
+
+       // Assertions.assertEquals(result, Main.getTechnologyProgrammers(programmers));
+    }
 }

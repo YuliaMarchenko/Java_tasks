@@ -31,7 +31,7 @@ public class Main {
 
     public static Map<Integer, String> getTasksPerformerFromBerlin(List<Performer> performers) {
         return performers.stream()
-                .filter(performer -> performer.getCity() == "Berlin")
+                .filter(performer -> performer.getCity().equals("Berlin"))
                 .map(performer -> performer.getTask())
                 .collect(Collectors.toMap(task -> task.getId(), task -> task.getTitle()));
     }
@@ -58,4 +58,31 @@ public class Main {
                 .filter(task -> !task.getStatus().equals("canceled"))
                 .collect(Collectors.partitioningBy(task -> task.getStatus().equals("done"), Collectors.toList()));
     }
+
+    public static Map<String, List<Programmer>> getTechnologyProgrammers(List<Programmer> programmers){
+        class ProgrammerHelper(Programmer programmer, String technology) {
+            private Programmer programmer;
+            private String technology;
+
+            public Programmer getProgrammer() {
+                this.name = name;
+                this.technology = technology;
+            }
+
+            public Programmer getProgrammer() {
+                return programmer;
+            }
+
+            public List<String> getTechnology() {
+                return technology;
+            }
+        }
+
+        return programmers.stream()
+                .flatMap(p -> p.getTechnology().stream().map(s -> new ProgrammerHelper(p,s)))
+                .collect(Collectors.groupingBy(ProgrammerHelper::getTechnology),
+                        Collectors.mapping(ProgrammerHelper::getProgrammer, Collectors.toList()))
+                ;
+    }
+
 }
