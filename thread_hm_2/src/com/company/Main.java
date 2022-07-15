@@ -112,5 +112,56 @@ public class Main {
 
         finish = Instant.now();
         System.out.println("Five threads: " + ChronoUnit.MILLIS.between(start, finish));
+
+
+        Thread th11 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 25000000; i++) {
+                    array[i] = random.nextInt();
+                }
+            }
+        });
+
+        Thread th22 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 25000000; i < 50000000; i++) {
+                    array[i] = random.nextInt();
+                }
+            }
+        });
+
+        Thread th33 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 50000000; i < 75000000; i++) {
+                    array[i] = random.nextInt();
+                }
+            }
+        });
+
+        Thread th44 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 75000000; i < 100000000; i++) {
+                    array[i] = random.nextInt();
+                }
+            }
+        });
+
+        start = Instant.now();
+
+        th11.start();
+        th22.start();
+        th33.start();
+        th44.start();
+        th11.join();
+        th22.join();
+        th33.join();
+        th44.join();
+
+        finish = Instant.now();
+        System.out.println("Four threads: " + ChronoUnit.MILLIS.between(start, finish));
     }
 }

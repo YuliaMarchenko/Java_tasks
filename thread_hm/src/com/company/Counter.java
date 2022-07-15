@@ -19,7 +19,7 @@ public class Counter {
         return --this.counter;
     }
 
-    public synchronized void print() {
+    public void print() {
         if (counter % 100 == 0) {
             System.out.println(this.counter);
         }
